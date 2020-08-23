@@ -3,16 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060734F37D3755C62339CF24 /* Pods_WoogieTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */; };
 		6413F48524F2726F00EFF8DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48424F2726F00EFF8DA /* AppDelegate.swift */; };
 		6413F48724F2726F00EFF8DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48624F2726F00EFF8DA /* SceneDelegate.swift */; };
 		6413F48924F2726F00EFF8DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48824F2726F00EFF8DA /* ViewController.swift */; };
 		6413F48C24F2726F00EFF8DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6413F48A24F2726F00EFF8DA /* Main.storyboard */; };
 		6413F48E24F2727200EFF8DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6413F48D24F2727200EFF8DA /* Assets.xcassets */; };
 		6413F49124F2727200EFF8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6413F48F24F2727200EFF8DA /* LaunchScreen.storyboard */; };
+		6413F49B24F27AA800EFF8DA /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6413F49A24F27AA800EFF8DA /* RemoteConfigDefaults.plist */; };
+		6413F49D24F27D9D00EFF8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6413F49C24F27D9D00EFF8DA /* GoogleService-Info.plist */; };
+		64E32A6224F28EB600E3BEA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,12 @@
 		6413F48D24F2727200EFF8DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6413F49024F2727200EFF8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6413F49224F2727200EFF8DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6413F49A24F27AA800EFF8DA /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		6413F49C24F27D9D00EFF8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.release.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.release.xcconfig"; sourceTree = "<group>"; };
+		BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoogieTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.debug.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060734F37D3755C62339CF24 /* Pods_WoogieTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		453EB77E6CCF609754742F16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6413F47824F2726F00EFF8DA = {
 			isa = PBXGroup;
 			children = (
 				6413F48324F2726F00EFF8DA /* WoogieTalk */,
 				6413F48224F2726F00EFF8DA /* Products */,
+				ED165C14AD5E2EE40AEB405E /* Pods */,
+				453EB77E6CCF609754742F16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +80,24 @@
 				6413F48424F2726F00EFF8DA /* AppDelegate.swift */,
 				6413F48624F2726F00EFF8DA /* SceneDelegate.swift */,
 				6413F48824F2726F00EFF8DA /* ViewController.swift */,
+				64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */,
 				6413F48A24F2726F00EFF8DA /* Main.storyboard */,
 				6413F48D24F2727200EFF8DA /* Assets.xcassets */,
 				6413F48F24F2727200EFF8DA /* LaunchScreen.storyboard */,
 				6413F49224F2727200EFF8DA /* Info.plist */,
+				6413F49C24F27D9D00EFF8DA /* GoogleService-Info.plist */,
+				6413F49A24F27AA800EFF8DA /* RemoteConfigDefaults.plist */,
 			);
 			path = WoogieTalk;
+			sourceTree = "<group>";
+		};
+		ED165C14AD5E2EE40AEB405E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */,
+				8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6413F49524F2727200EFF8DA /* Build configuration list for PBXNativeTarget "WoogieTalk" */;
 			buildPhases = (
+				532C9B40FD5835731247E5B6 /* [CP] Check Pods Manifest.lock */,
 				6413F47D24F2726F00EFF8DA /* Sources */,
 				6413F47E24F2726F00EFF8DA /* Frameworks */,
 				6413F47F24F2726F00EFF8DA /* Resources */,
+				03DB2EEF7B7E56E22485E43C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6413F49124F2727200EFF8DA /* LaunchScreen.storyboard in Resources */,
+				6413F49B24F27AA800EFF8DA /* RemoteConfigDefaults.plist in Resources */,
+				6413F49D24F27D9D00EFF8DA /* GoogleService-Info.plist in Resources */,
 				6413F48E24F2727200EFF8DA /* Assets.xcassets in Resources */,
 				6413F48C24F2726F00EFF8DA /* Main.storyboard in Resources */,
 			);
@@ -133,11 +170,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03DB2EEF7B7E56E22485E43C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		532C9B40FD5835731247E5B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WoogieTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6413F47D24F2726F00EFF8DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E32A6224F28EB600E3BEA9 /* LoginViewController.swift in Sources */,
 				6413F48924F2726F00EFF8DA /* ViewController.swift in Sources */,
 				6413F48524F2726F00EFF8DA /* AppDelegate.swift in Sources */,
 				6413F48724F2726F00EFF8DA /* SceneDelegate.swift in Sources */,
@@ -282,6 +362,7 @@
 		};
 		6413F49624F2727200EFF8DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +381,7 @@
 		};
 		6413F49724F2727200EFF8DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
