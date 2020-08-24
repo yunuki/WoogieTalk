@@ -19,13 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         color = remoteConfig["splash_themecolor"].stringValue
         loginButton.backgroundColor = UIColor(hex: color)
         signUpButton.backgroundColor = UIColor(hex: color)
-        loginButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
-        signUpButton.addTarget(self, action: #selector(presentSignUp), for: .touchUpInside)
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
@@ -36,7 +33,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @objc func loginEvent() {
+    @IBAction func loginButtonTapped(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, err) in
             if err != nil {
                 let alert = UIAlertController(title: "error", message: err.debugDescription, preferredStyle: .alert)
@@ -45,11 +42,12 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @objc func presentSignUp() {
+
+    @IBAction func signUpButtonTapped(_ sender: Any) {
         let signUpVC = self.storyboard?.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
-        self.present(signUpVC, animated: true, completion: nil)
+         self.present(signUpVC, animated: true, completion: nil)
         
     }
+
 
 }

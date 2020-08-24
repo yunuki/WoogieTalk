@@ -78,6 +78,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="KUq-LA-e4j" eventType="touchUpInside" id="pt0-gN-2Tp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUC-AK-N3u">
                                 <rect key="frame" x="47" y="459" width="320" height="40"/>
@@ -88,6 +91,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="KUq-LA-e4j" eventType="touchUpInside" id="iW6-8Q-rpR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -199,6 +205,9 @@
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="O4l-ff-x5w" eventType="touchUpInside" id="rrM-Ls-Yz5"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addToPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="2v9-LJ-5Qn">
                                 <rect key="frame" x="157" y="192" width="100" height="100"/>
@@ -231,8 +240,8 @@
                         <outlet property="emailTextField" destination="MNk-yw-n28" id="IZX-Ii-fY1"/>
                         <outlet property="imageView" destination="2v9-LJ-5Qn" id="VlQ-ct-V6f"/>
                         <outlet property="nameTextField" destination="xKu-vm-aFy" id="0hD-bo-K5J"/>
-                        <outlet property="okButton" destination="zao-9E-8gS" id="YOf-OO-ooy"/>
                         <outlet property="passwordTextField" destination="emb-hx-Ogt" id="kaM-mU-mad"/>
+                        <outlet property="signUpButton" destination="zao-9E-8gS" id="YOf-OO-ooy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWd-Pg-e2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

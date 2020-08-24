@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
     let remoteConfig = RemoteConfig.remoteConfig()
@@ -24,8 +24,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         color = remoteConfig["splash_themecolor"].stringValue
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
-        okButton.backgroundColor = UIColor(hex: color)
-        okButton.addTarget(self, action: #selector(signUpEvent), for: .touchUpInside)
+        signUpButton.backgroundColor = UIColor(hex: color)
     }
     
     @objc func imagePicker() {
@@ -41,8 +40,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         imageView.image = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
-    
-    @objc func signUpEvent() {
+    @IBAction func signUpButtonTapped(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let image = imageView.image {
             if email == "" || password == "" || name == "" {
                 let alert = UIAlertController(title: "경고", message: "모두 입력하세요", preferredStyle: .alert)
@@ -60,10 +58,9 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                             }
                         }
                     }
-                    
                 }
+                dismiss(animated: true, completion: nil)
             }
-            
         }
     }
 }
