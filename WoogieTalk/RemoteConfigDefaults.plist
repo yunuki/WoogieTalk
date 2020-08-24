@@ -6,7 +6,7 @@
 	<string>Welcome</string>
 	<key>splash_message_caps</key>
 	<false/>
-	<key>splash_background</key>
+	<key>splash_themecolor</key>
 	<string>#000000</string>
 </dict>
 </plist>
