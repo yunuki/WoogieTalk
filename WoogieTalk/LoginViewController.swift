@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        try! Auth.auth().signOut()
         // Do any additional setup after loading the view.
         color = remoteConfig["splash_themecolor"].stringValue
         loginButton.backgroundColor = UIColor(hex: color)
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                let mainVC = self.storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+                let mainVC = self.storyboard?.instantiateViewController(identifier: "MainViewTabBarController") as! UITabBarController
                 mainVC.modalPresentationStyle = .fullScreen
                 self.present(mainVC, animated: true, completion: nil)
             }
