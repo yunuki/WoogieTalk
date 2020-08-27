@@ -27,9 +27,7 @@ class LoginViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                let mainVC = self.storyboard?.instantiateViewController(identifier: "MainViewTabBarController") as! UITabBarController
-                mainVC.modalPresentationStyle = .fullScreen
-                self.present(mainVC, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "loginToMain", sender: nil)
             }
         }
     }
@@ -45,8 +43,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        let signUpVC = self.storyboard?.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
-         self.present(signUpVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "loginToSignUp", sender: nil)
         
     }
 

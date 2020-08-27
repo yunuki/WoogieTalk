@@ -47,19 +47,22 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil )
             } else {
-                Auth.auth().createUser(withEmail: email, password: password) { (user, err) in
-                    if let uid = user?.user.uid {
-                        guard let imageData = UIImage.jpegData(image)(compressionQuality: 0.1) else {return}
-                        let imageRef = Storage.storage().reference().child("userImages/\(uid).jpg")
-                        imageRef.putData(imageData, metadata: nil) { (metadata, err) in
-                            imageRef.downloadURL { (url, err) in
-                                let imageURL = url?.absoluteString
-                                Database.database().reference().child("users").child(uid).setValue(["userName":name, "profileImageURL":imageURL])
+                self.dismiss(animated: true) {
+                    Auth.auth().createUser(withEmail: email, password: password) { (user, err) in
+                        if let uid = user?.user.uid {
+                            guard let imageData = UIImage.jpegData(image)(compressionQuality: 0.1) else {return}
+                            let imageRef = Storage.storage().reference().child("userImages/\(uid).jpg")
+                            imageRef.putData(imageData, metadata: nil) { (metadata, err) in
+                                imageRef.downloadURL { (url, err) in
+                                    let imageURL = url?.absoluteString
+                                    let values = ["userName":name, "profileImageURL":imageURL]
+                                    Database.database().reference().child("users").child(uid).setValue(values)
+                                }
                             }
                         }
                     }
                 }
-                dismiss(animated: true, completion: nil)
+                
             }
         }
     }

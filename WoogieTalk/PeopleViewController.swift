@@ -28,13 +28,14 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.users.append(userModel)
             }
             DispatchQueue.main.async {
+                self.users = self.users.sorted(by: {$0.userName! < $1.userName!})
                 self.tableView.reloadData()
             }
         }
     }
     
     func makeTableView() {
-        tableView.rowHeight = 50
+        tableView.rowHeight = 60
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -86,5 +87,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "chat", sender: nil)
+    }
 
 }
