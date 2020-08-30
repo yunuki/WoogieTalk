@@ -18,6 +18,8 @@
 		6413F49D24F27D9D00EFF8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6413F49C24F27D9D00EFF8DA /* GoogleService-Info.plist */; };
 		6475D54624F3E2F600DC1C65 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475D54524F3E2F600DC1C65 /* PeopleViewController.swift */; };
 		6475D54824F3E31300DC1C65 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475D54724F3E31300DC1C65 /* UserModel.swift */; };
+		64D6E21224FB8A3E00792D31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6E21124FB8A3E00792D31 /* ChatViewController.swift */; };
+		64D6E21524FB8C6400792D31 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6E21424FB8C6400792D31 /* ChatModel.swift */; };
 		64E32A6224F28EB600E3BEA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */; };
 		64E32A6624F38EE700E3BEA9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E32A6524F38EE700E3BEA9 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		6413F49C24F27D9D00EFF8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6475D54524F3E2F600DC1C65 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		6475D54724F3E31300DC1C65 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		64D6E21124FB8A3E00792D31 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		64D6E21424FB8C6400792D31 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64E32A6524F38EE700E3BEA9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.release.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,13 +87,14 @@
 		6413F48324F2726F00EFF8DA /* WoogieTalk */ = {
 			isa = PBXGroup;
 			children = (
+				64D6E21324FB8C4100792D31 /* Model */,
 				6413F48424F2726F00EFF8DA /* AppDelegate.swift */,
 				6413F48624F2726F00EFF8DA /* SceneDelegate.swift */,
 				6413F48824F2726F00EFF8DA /* ViewController.swift */,
 				64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */,
 				64E32A6524F38EE700E3BEA9 /* SignUpViewController.swift */,
 				6475D54524F3E2F600DC1C65 /* PeopleViewController.swift */,
-				6475D54724F3E31300DC1C65 /* UserModel.swift */,
+				64D6E21124FB8A3E00792D31 /* ChatViewController.swift */,
 				6413F48A24F2726F00EFF8DA /* Main.storyboard */,
 				6413F48D24F2727200EFF8DA /* Assets.xcassets */,
 				6413F48F24F2727200EFF8DA /* LaunchScreen.storyboard */,
@@ -98,6 +103,15 @@
 				6413F49A24F27AA800EFF8DA /* RemoteConfigDefaults.plist */,
 			);
 			path = WoogieTalk;
+			sourceTree = "<group>";
+		};
+		64D6E21324FB8C4100792D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6475D54724F3E31300DC1C65 /* UserModel.swift */,
+				64D6E21424FB8C6400792D31 /* ChatModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ED165C14AD5E2EE40AEB405E /* Pods */ = {
@@ -228,11 +242,13 @@
 			files = (
 				64E32A6224F28EB600E3BEA9 /* LoginViewController.swift in Sources */,
 				6475D54824F3E31300DC1C65 /* UserModel.swift in Sources */,
+				64D6E21224FB8A3E00792D31 /* ChatViewController.swift in Sources */,
 				6413F48924F2726F00EFF8DA /* ViewController.swift in Sources */,
 				6413F48524F2726F00EFF8DA /* AppDelegate.swift in Sources */,
 				6413F48724F2726F00EFF8DA /* SceneDelegate.swift in Sources */,
 				64E32A6624F38EE700E3BEA9 /* SignUpViewController.swift in Sources */,
 				6475D54624F3E2F600DC1C65 /* PeopleViewController.swift in Sources */,
+				64D6E21524FB8C6400792D31 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

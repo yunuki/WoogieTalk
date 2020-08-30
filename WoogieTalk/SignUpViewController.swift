@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                             imageRef.putData(imageData, metadata: nil) { (metadata, err) in
                                 imageRef.downloadURL { (url, err) in
                                     let imageURL = url?.absoluteString
-                                    let values = ["userName":name, "profileImageURL":imageURL]
+                                    let values = ["userName":name, "profileImageURL":imageURL, "uid":uid]
                                     Database.database().reference().child("users").child(uid).setValue(values)
                                 }
                             }

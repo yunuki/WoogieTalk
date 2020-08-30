@@ -21,10 +21,15 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Database.database().reference().child("users").observe(.value) { (snapshot) in
             self.users.removeAll()
 
+            let myUid = Auth.auth().currentUser?.uid
+            
             for child in snapshot.children {
                 let fchild = child as! DataSnapshot
                 let userModel = UserModel()
                 userModel.setValuesForKeys(fchild.value as! [String:Any])
+                if userModel.uid == myUid {
+                    continue
+                }
                 self.users.append(userModel)
             }
             DispatchQueue.main.async {
@@ -87,8 +92,12 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "chat", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
+        let chatVC = self.storyboard?.instantiateViewController(identifier: "ChatViewController") as? ChatViewController
+        chatVC?.destinationUid = self.users[indexPath.row].uid
+        self.navigationController?.pushViewController(chatVC!, animated: true)
     }
 
 }
