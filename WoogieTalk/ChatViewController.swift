@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
     var uid: String?
     var chatRoomUid: String?
     var destinationUid: String?
+    var userModel: UserModel?
     var comments: [ChatModel.Comment] = []
     
     @IBOutlet weak var sendButton: UIButton!
@@ -67,7 +68,7 @@ class ChatViewController: UIViewController {
                     if chatModel?.users[self.destinationUid!] == true {
                         self.chatRoomUid = item.key
                         self.sendButton.isEnabled = true
-                        self.getMessageList()
+                        self.getDestinationInfo()
                     }
                 }
             }
@@ -76,7 +77,13 @@ class ChatViewController: UIViewController {
             }
         }
     }
-    
+    func getDestinationInfo() {
+        Database.database().reference().child("users").child(self.destinationUid!).observeSingleEvent(of: .value) { (dataSnapShot) in
+            self.userModel = UserModel()
+            self.userModel?.setValuesForKeys(dataSnapShot.value as! [String:Any])
+            self.getMessageList()
+        }
+    }
     func getMessageList() {
         Database.database().reference().child("chatRooms").child(self.chatRoomUid!).child("comments").observe(.value) { (dataSnapShot) in
             self.comments.removeAll()
@@ -97,10 +104,42 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-        cell.textLabel?.text = self.comments[indexPath.row].message
-        return cell
+        if self.comments[indexPath.row].uid == uid {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
+            cell.messageLabel.text = self.comments[indexPath.row].message
+            cell.messageLabel.numberOfLines = 0
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
+            cell.messageLabel.text = self.comments[indexPath.row].message
+            cell.messageLabel.numberOfLines = 0
+            cell.nameLabel.text = self.userModel?.userName
+            let url = URL(string: (self.userModel?.profileImageURL)!)
+            URLSession.shared.dataTask(with: url!) { (data, res, err) in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        cell.profileImageView.image = UIImage(data: data)
+                        cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.width / 2
+                        cell.profileImageView.clipsToBounds = true
+                    }
+                }
+            }.resume()
+            return cell
+        }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
+}
+
+class MyMessageCell: UITableViewCell {
+    @IBOutlet weak var messageLabel: UILabel!
+}
+
+class DestinationMessageCell: UITableViewCell {
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
 }
