@@ -11,6 +11,8 @@ import Firebase
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     var uid: String?
     var chatRoomUid: String?
     var destinationUid: String?
@@ -25,7 +27,42 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
         checkChatRoom(completion: nil) //채팅방 db 존재 유무 체크
-        // Do any additional setup after loading the view.
+        self.tabBarController?.tabBar.isHidden = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height - 20
+        }
+        UIView.animate(withDuration: 0, animations: {
+            self.view.layoutIfNeeded()
+        }) { (complete) in
+            if self.comments.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        self.bottomConstraint.constant = 20
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     @IBAction func sendButtonTapped(_ sender: Any) {
@@ -57,7 +94,9 @@ class ChatViewController: UIViewController {
             "uid": uid!,
             "message": messageTextField.text!
         ]
-        Database.database().reference().child("chatRooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value)
+        Database.database().reference().child("chatRooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value) { (err, ref) in
+            self.messageTextField.text = ""
+        }
     }
     
     func checkChatRoom(completion: (()->Void)?) {
@@ -93,6 +132,9 @@ class ChatViewController: UIViewController {
                 }
             }
             self.tableView.reloadData()
+            if self.comments.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+            }
         }
     }
     

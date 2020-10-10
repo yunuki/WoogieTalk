@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060734F37D3755C62339CF24 /* Pods_WoogieTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */; };
 		6413F48524F2726F00EFF8DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48424F2726F00EFF8DA /* AppDelegate.swift */; };
 		6413F48724F2726F00EFF8DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48624F2726F00EFF8DA /* SceneDelegate.swift */; };
 		6413F48924F2726F00EFF8DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6413F48824F2726F00EFF8DA /* ViewController.swift */; };
@@ -22,9 +21,12 @@
 		64D6E21524FB8C6400792D31 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6E21424FB8C6400792D31 /* ChatModel.swift */; };
 		64E32A6224F28EB600E3BEA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */; };
 		64E32A6624F38EE700E3BEA9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E32A6524F38EE700E3BEA9 /* SignUpViewController.swift */; };
+		757B2091955F4F35658A75C6 /* Pods_WoogieTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454819D2820A9F7EFEB7D42E /* Pods_WoogieTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454819D2820A9F7EFEB7D42E /* Pods_WoogieTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoogieTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		615ADFDAF3658C6908BB4A24 /* Pods-WoogieTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.release.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.release.xcconfig"; sourceTree = "<group>"; };
 		6413F48124F2726F00EFF8DA /* WoogieTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoogieTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6413F48424F2726F00EFF8DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6413F48624F2726F00EFF8DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +43,7 @@
 		64D6E21424FB8C6400792D31 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		64E32A6124F28EB600E3BEA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64E32A6524F38EE700E3BEA9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.release.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.release.xcconfig"; sourceTree = "<group>"; };
-		BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoogieTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.debug.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5C99925E18C61992390FA9 /* Pods-WoogieTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoogieTalk.debug.xcconfig"; path = "Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,28 +51,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				060734F37D3755C62339CF24 /* Pods_WoogieTalk.framework in Frameworks */,
+				757B2091955F4F35658A75C6 /* Pods_WoogieTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		453EB77E6CCF609754742F16 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BEE64F6A0AC24667944B4AA1 /* Pods_WoogieTalk.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6413F47824F2726F00EFF8DA = {
 			isa = PBXGroup;
 			children = (
 				6413F48324F2726F00EFF8DA /* WoogieTalk */,
 				6413F48224F2726F00EFF8DA /* Products */,
 				ED165C14AD5E2EE40AEB405E /* Pods */,
-				453EB77E6CCF609754742F16 /* Frameworks */,
+				88BAAB058AB4F2DE88FC9B5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,11 +106,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		88BAAB058AB4F2DE88FC9B5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				454819D2820A9F7EFEB7D42E /* Pods_WoogieTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED165C14AD5E2EE40AEB405E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */,
-				8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */,
+				8E5C99925E18C61992390FA9 /* Pods-WoogieTalk.debug.xcconfig */,
+				615ADFDAF3658C6908BB4A24 /* Pods-WoogieTalk.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,11 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6413F49524F2727200EFF8DA /* Build configuration list for PBXNativeTarget "WoogieTalk" */;
 			buildPhases = (
-				532C9B40FD5835731247E5B6 /* [CP] Check Pods Manifest.lock */,
+				9FB9A8259E6A4CD98AE07C8E /* [CP] Check Pods Manifest.lock */,
 				6413F47D24F2726F00EFF8DA /* Sources */,
 				6413F47E24F2726F00EFF8DA /* Frameworks */,
 				6413F47F24F2726F00EFF8DA /* Resources */,
-				03DB2EEF7B7E56E22485E43C /* [CP] Embed Pods Frameworks */,
+				87287C2405D160BBB9EF6D53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,7 +194,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03DB2EEF7B7E56E22485E43C /* [CP] Embed Pods Frameworks */ = {
+		87287C2405D160BBB9EF6D53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,7 +211,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WoogieTalk/Pods-WoogieTalk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		532C9B40FD5835731247E5B6 /* [CP] Check Pods Manifest.lock */ = {
+		9FB9A8259E6A4CD98AE07C8E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -390,7 +390,7 @@
 		};
 		6413F49624F2727200EFF8DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBE722AF96D8986FEDFD67BA /* Pods-WoogieTalk.debug.xcconfig */;
+			baseConfigurationReference = 8E5C99925E18C61992390FA9 /* Pods-WoogieTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -409,7 +409,7 @@
 		};
 		6413F49724F2727200EFF8DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B1A08AC2FA07379F1743D8C /* Pods-WoogieTalk.release.xcconfig */;
+			baseConfigurationReference = 615ADFDAF3658C6908BB4A24 /* Pods-WoogieTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
